@@ -8,6 +8,7 @@ var lineA = "";
 var newString = [];
 
 function decrypt(message) {
+  debugger;
   messageToArray = message.split("");
   for (var i = 0; i <= message.length; i+=8) {
     line1.push(messageToArray.shift()); line2.push(messageToArray.shift());
@@ -44,11 +45,7 @@ $(document).ready(function() {
   $("form#roman").submit(function(event) {
     event.preventDefault();
     var formInput = $("input#numberinput").val();
-    $("#output").fadeIn(3000, "swing").animate({
-      marginLeft: '-=50',
-      marginTop: '+=50'
-
-    }, 5000);
+    $("#output").fadeIn(15000), 9000;
 
     // $("#output").hide().animate({ marginRight: '+=5000'},0);
       decrypt(formInput);
