@@ -8,7 +8,7 @@ var lineA = "";
 var newString = [];
 
 function decrypt(message) {
-  debugger;
+  message=message.replace(/\s/g,'');
   messageToArray = message.split("");
   for (var i = 0; i <= message.length; i+=8) {
     line1.push(messageToArray.shift()); line2.push(messageToArray.shift());
@@ -16,6 +16,7 @@ function decrypt(message) {
     line5.push(messageToArray.shift()); line6.push(messageToArray.shift());
     line7.push(messageToArray.shift()); line8.push(messageToArray.shift());
   }
+
   translation = line1.join('') + line2.join('')
   + line3.join('') + line4.join('') + line5.join('')
   + line6.join('') + line7.join('') + line8.join('');
