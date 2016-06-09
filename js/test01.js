@@ -1,14 +1,7 @@
 var message= "";
 var messageToArray= [];
-var line1 = [];
-var line2 = [];
-var line3 = [];
-var line4 = [];
-var line5 = [];
-var line6 = [];
-var line7 = [];
-var line8 = [];
-var line9 = [];
+var line = [];
+
 var translation = "";
 var output = "";
 var lineA = "";
@@ -18,25 +11,15 @@ function decrypt(message) {
   // debugger;
   messageToArray = message.split("");
 
-  for (var i = 0; i <= message.length; i+=8) {
-    line1.push(messageToArray.shift());
-    line2.push(messageToArray.shift());
-    line3.push(messageToArray.shift());
-    line4.push(messageToArray.shift());
-    line5.push(messageToArray.shift());
-    line6.push(messageToArray.shift());
-    line7.push(messageToArray.shift());
-    line8.push(messageToArray.shift());
+  for (var i = 0; i <= message.length; i++) {
+    line[i].push(messageToArray.shift());
   }
 
 
 
-  translation = line1.join('') + line2.join('')
-  + line3.join('') + line4.join('') + line5.join('')
-  + line6.join('') + line7.join('') + line8.join('');
-
+  translation = line.join('')
   newString = translation.split('');
-// debugger;
+
   var lineA = translation.slice(0, 5);
   var lineB = translation.slice(5, 10);
   var lineC = translation.slice(10, 15);
@@ -52,8 +35,8 @@ function decrypt(message) {
   var lineM = translation.slice(60, 65);
   var lineN = translation.slice(65, 70);
 
-  output = lineA + " " + lineB + " " + lineC + " " + lineD + " " + lineE + " " + lineF + " " + lineG + " " + lineH + " " + lineI + " " + lineJ + " " + lineK + " " + lineL + " " + lineM  + " "  + lineN
-
+  output = lineA + lineB
+  //  + lineB.join('') + " " + lineC.join('') + " " + lineD.join('') + " " + lineE.join('') + " " + lineF.join('') + " " + lineG.join('') + " " + lineH.join('') + " " + lineI.join('') + " " + lineJ.join('') + " " + lineK.join('') + " " + lineL.join('') + " " + lineM.join('') + " " + lineN.join('');
 }
 
 
